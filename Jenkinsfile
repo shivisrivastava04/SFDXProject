@@ -45,7 +45,7 @@ node {
 			   rmsg = bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:deploy -d manifest/. -u ${HUB_ORG}"
 			}
 			  
-            printf rmsg
+            println rmsg
             println('Hello from a Job DSL script!')
             println(rmsg)
         }

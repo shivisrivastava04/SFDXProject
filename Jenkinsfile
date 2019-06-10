@@ -12,7 +12,7 @@ node {
     def CONNECTED_APP_CONSUMER_KEY=env.CONNECTED_APP_CONSUMER_KEY_DH
     def SFDX_HOME = "C:\\Program Files\\Salesforce CLI\\bin\\"
     def SFDX_USE_GENERIC_UNIX_KEYCHAIN = true
-    def secretKey="C:\opesnssl\bin\server.key"
+    def secretKey="C:\\opesnssl\\bin\\server.key"
 
     println 'KEY IS' 
     println JWT_KEY_CRED_ID

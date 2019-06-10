@@ -12,6 +12,7 @@ node {
     def CONNECTED_APP_CONSUMER_KEY=env.CONNECTED_APP_CONSUMER_KEY_DH
     def SFDX_HOME = "C:\\Program Files\\Salesforce CLI\\bin\\"
     def SFDX_USE_GENERIC_UNIX_KEYCHAIN = true
+    def secretKey="C:\opesnssl\bin\server.key"
 
     println 'KEY IS' 
     println JWT_KEY_CRED_ID
@@ -31,7 +32,7 @@ node {
             if (isUnix()) {
                 rc = sh returnStatus: true, script: "\"${SFDX_HOME}sfdx\" force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${JWT_KEY_CRED_ID} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
             }else{
-                 rc = bat returnStatus: true, script: "\"${SFDX_HOME}sfdx\" force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile c:\openssl\bin\server.key --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
+                 rc = bat returnStatus: true, script: "\"${SFDX_HOME}sfdx\" force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${secretKey} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
             }
             if (rc != 0) { error 'hub org authorization failed' }
 

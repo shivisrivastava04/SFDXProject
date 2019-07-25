@@ -42,7 +42,7 @@ node {
 			if (isUnix()) {
 				rmsg = sh returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:deploy -d manifest/. -u ${HUB_ORG}"
 			}else{
-			   rmsg = bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:deploy -d manifest/ -u ${HUB_ORG} -k ./manifest/package.xml"
+			   rmsg = bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:deploy -d manifest/ -u ${HUB_ORG} ./manifest/package.xml"
 			}
 			  
             println rmsg

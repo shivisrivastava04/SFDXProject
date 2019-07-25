@@ -3,6 +3,7 @@
 	<version>46.0</version>
     <types>
         <members>AccountController</members>
+	 <members>ContactController</members>   
         <name>ApexClass</name>
     </types>
     

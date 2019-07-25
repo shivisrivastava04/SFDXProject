@@ -43,7 +43,7 @@ node {
 				rmsg = sh returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:deploy -d manifest/. -u ${HUB_ORG}"
 			}else{
 				bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:retrieve -k manifest/package.xml -r prodBackup -u ${HUB_ORG}"
-			   rmsg = bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:deploy -d prodBackup/unpackaged.zip -u ${HUB_ORG}"
+			   rmsg = bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:deploy -f prodBackup/unpackaged.zip -u ${HUB_ORG}"
 				//-r manifest/package.xml -u ${HUB_ORG}"
 				
 			}

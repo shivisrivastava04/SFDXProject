@@ -42,8 +42,8 @@ node {
 			if (isUnix()) {
 				rmsg = sh returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:deploy -d manifest/. -u ${HUB_ORG}"
 			}else{
-				bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:retrieve -k manifest/package.xml -r prodBackup1 -u ${HUB_ORG}"
-			   rmsg = bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:deploy -f prodBackup1/unpackaged.zip -u ${HUB_ORG} -w 10"
+				bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:retrieve -k force-app/main/default -r prodBackup2 -u ${HUB_ORG}"
+			   rmsg = bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:deploy -f prodBackup2/unpackaged.zip -u ${HUB_ORG} -w 10"
 				//-r manifest/package.xml -u ${HUB_ORG}"
 				
 			}

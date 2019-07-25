@@ -44,7 +44,7 @@ node {
 			}else{
 				//bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:retrieve -k force-app/main/default/package.xml -r prodBackup2 -u ${HUB_ORG}"
 				//bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:retrieve -p force-app/main/default -r prodBackup2 -u ${HUB_ORG}"
-			   rmsg = bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:deploy -f default/. -u ${HUB_ORG} -w 10"
+			   rmsg = bat returnStdout: true, script: "\"${SFDX_HOME}sfdx\" force:mdapi:deploy -d default/. -u ${HUB_ORG} -w 10"
 				//-r manifest/package.xml -u ${HUB_ORG}"
 				
 			}

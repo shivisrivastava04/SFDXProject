@@ -32,8 +32,8 @@ node {
             if (isUnix()) {
                 rc = sh returnStatus: true, script: "\"${SFDX_HOME}sfdx\" force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${JWT_KEY_CRED_ID} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
             }else{
-		  bd=  bat returnStatus: true, script: "\"${SFDX_HOME}sfdx\" force:auth:web:login --instanceurl ${SFDC_HOST}"
-                 println bd
+		 // bd=  bat returnStatus: true, script: "\"${SFDX_HOME}sfdx\" force:auth:web:login --instanceurl ${SFDC_HOST}"
+                 //println bd
 		    rc = bat returnStatus: true, script: "\"${SFDX_HOME}sfdx\" force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${secretKey} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
             }
             if (rc != 0) { error 'hub org authorization failed' }
